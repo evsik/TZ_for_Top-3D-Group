@@ -98,6 +98,120 @@
         </div>
       </div>
     </div>
+    <nav class="b-mainNav">
+      <ul>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Акции
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            О нас
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Мероприятия
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Оплата и доставка
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Что с моим заказом?
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Гос. закупки
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Блог
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Мастер-классы
+          </a>
+        </li>
+        <li class="b-mainNav__list">
+          <a href="#" class="b-mainNav__link">
+            Контакты
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <hr>
+    <nav class="b-servicesNav">
+      <ul>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            3D-принтеры <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            3D-сканеры <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Станки <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Роботы <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Образование <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Стоматологам <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Гаджеты <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Материалы <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            ПО <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Решения <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Учебный центр <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+        <li class="b-servicesNav__list">
+          <a href="#" class="b-servicesNav__link">
+            Услуги <i class="fas fa-chevron-down"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
 </template>
@@ -347,6 +461,57 @@ $varColorBlack: #000000;
     width: 300px;
     height: 300px;
     overflow-y: scroll;
+  }
+}
+
+.b-mainNav {
+  padding: 16px 120px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    .b-mainNav__list {
+      list-style-type: none;
+      transition: 1s;
+
+      &:hover {
+        transform: scale(1.1);
+        font-weight: bold;
+      }
+
+      .b-mainNav__link {
+        text-decoration: none;
+        font-family: Open Sans, serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 18px;
+        color: $varColorBlack;
+
+      }
+    }
+  }
+}
+
+.b-servicesNav {
+  @extend .b-mainNav;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    .b-servicesNav__list {
+      list-style-type: none;
+
+      .b-servicesNav__link {
+        text-decoration: none;
+        font-family: Open Sans, serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 18px;
+        color: $varColorBlack;
+      }
+    }
   }
 }
 
