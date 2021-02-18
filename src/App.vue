@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 #app {
+  max-width: 1440px;
   padding: 10px 50px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
