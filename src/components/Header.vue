@@ -55,6 +55,49 @@
         </div>
       </div>
     </div>
+    <div class="b-userSlider">
+      <div class="b-logo">
+        <a href="/">
+          <img src="../assets/logo.png" alt="logo">
+        </a>
+        <p class="b-logo__text">
+          Ваш эксперт
+          <br>
+          на рынке 3D-техники
+        </p>
+      </div>
+      <div class="b-yandexMarket">
+        <a href="#">
+          <img src="../assets/yandex.png" alt="yandexMarket">
+        </a>
+      </div>
+      <div class="b-search">
+        <form action="#">
+          <input type="text" class="b-search__field" placeholder="Введите запрос, например, Formlabs Form 2"
+          >
+          <button class="btn-search" type="submit">
+            Найти
+          </button>
+        </form>
+      </div>
+      <div class="b-userCabinet">
+        <a href="#">
+          <i class="fas fa-sign-in-alt">
+            <p>Войти</p>
+          </i>
+        </a>
+      </div>
+      <div class="b-cart">
+        <button class="btn-cart" id="toggle-cart" type="button" @click="catalogShown = !catalogShown">
+          <i class="fas fa-shopping-cart"></i> Корзина пуста
+        </button>
+        <div class="cart-block" v-if="catalogShown">
+          <p>
+            Что-то в корзине
+          </p>
+        </div>
+      </div>
+    </div>
   </header>
 
 </template>
@@ -62,6 +105,12 @@
 <script>
 export default {
   name: "Header",
+
+  data() {
+    return {
+      catalogShown: false
+    }
+  }
 }
 </script>
 
@@ -178,5 +227,127 @@ $varColorBlack: #000000;
   }
 }
 
+.b-userSlider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 120px;
+}
+
+.b-logo {
+  display: flex;
+
+  a {
+
+  }
+
+  .b-logo__text {
+    font-family: Open Sans, serif;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    align-self: center;
+    margin-left: 16px;
+  }
+}
+
+.b-yandexMarket {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+  padding: 5px 12px;
+
+}
+
+.b-search {
+  form {
+    position: relative;
+
+    .b-search__field {
+      width: 521px;
+      height: 44px;
+      border: 1px solid #BDBDBD;
+      border-radius: 4px;
+      padding-left: 10px;
+
+    }
+
+    .btn-search {
+      position: absolute;
+      bottom: 4px;
+      right: 3px;
+      height: 36px;
+      width: 75px;
+      border: 2px solid #D2001C;
+      background-color: transparent;
+      border-radius: 4px;
+
+      color: #D2001C;
+      font-family: Open Sans, serif;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 18px;
+    }
+  }
+}
+
+.b-userCabinet {
+
+
+  a {
+    color: #D2001C;
+    text-decoration: none;
+
+    i {
+      display: flex;
+      font-size: 22px;
+
+      p {
+        margin-left: 10px;
+        font-family: Open Sans, serif;
+        font-weight: 600;
+        font-size: 13px;
+        color: #222222;
+        align-self: center;
+      }
+    }
+  }
+
+
+}
+
+.b-cart {
+  position: relative;
+
+  .btn-cart {
+    cursor: pointer;
+    width: 160px;
+    height: 36px;
+    background: #D2001C;
+    border: none;
+    border-radius: 4px;
+    font-family: Open Sans, serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+  }
+
+  .cart-block {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
+    border-radius: 5px;
+    box-sizing: border-box;
+    right: 0;
+    top: 130%;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    color: $varColorBlack;
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+  }
+}
 
 </style>
