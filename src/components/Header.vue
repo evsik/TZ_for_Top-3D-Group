@@ -109,6 +109,7 @@
     </nav>
     <hr>
     <nav class="b-servicesNav">
+      <i class="fas fa-bars" v-on:click="isActive = !isActive"></i>
       <ul>
         <DropMenu
             v-for="item of $store.state.dropMenuItems"
@@ -116,8 +117,8 @@
             :item="item"
         />
       </ul>
-      <i class="fas fa-bars" v-on:click="isActive = !isActive"></i>
-      <ul class="hoverMediaMenu" v-bind:class="{ slideInLeft: isActive }">
+
+      <ul class="hoverMediaMenu" v-show="isActive">
         <DropMenu
             v-for="item of $store.state.dropMenuItems"
             :key="item.title"
@@ -156,24 +157,26 @@ $varColorBlack: #000000;
 
 .b-header {
   box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.16);
-
 }
 
 .b-contactsSlider {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   background-color: #FED600;
   padding: 9px 120px;
 
   @media (max-width: 1500.98px) {
-    justify-content: center;
+    //justify-content: center;
     padding: 16px 100px;
+  }
+
+  @media (max-width: 1270.98px) {
+    justify-content: center;
+    flex-direction: column;
   }
 
   @media (max-width: 1060.98px) {
     padding: 16px 50px;
-    flex-direction: column;
   }
 
   @media (max-width: 750.98px) {
@@ -524,6 +527,10 @@ $varColorBlack: #000000;
     }
   }
 
+  .vision {
+    display: flex;
+  }
+
   .fa-bars {
     cursor: pointer;
     display: none;
@@ -535,9 +542,7 @@ $varColorBlack: #000000;
 
   .hoverMediaMenu {
     flex-direction: column;
-    position: absolute;
-    left: -200px;
-    display: none;
+    margin-top: 10px;
 
     .b-servicesNav__link {
       i {
@@ -549,6 +554,7 @@ $varColorBlack: #000000;
       margin-bottom: 5px;
 
       .b-servicesNav__link {
+
         i {
           transform: rotate(-90deg);
         }
@@ -556,7 +562,11 @@ $varColorBlack: #000000;
 
       .hover {
         padding-top: 0;
-        padding-left: 115px;
+        padding-left: 110px;
+
+        .hover-link {
+          font-size: 13px;
+        }
       }
     }
 

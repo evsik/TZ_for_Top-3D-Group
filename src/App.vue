@@ -7,6 +7,11 @@
     <Header>
 
     </Header>
+
+    <router-view/>
+
+    <footer/>
+
   </div>
 </template>
 
