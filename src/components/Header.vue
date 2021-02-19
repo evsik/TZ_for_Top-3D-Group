@@ -116,6 +116,14 @@
             :item="item"
         />
       </ul>
+      <i class="fas fa-bars" v-on:click="isActive = !isActive"></i>
+      <ul class="hoverMediaMenu" v-bind:class="{ slideInLeft: isActive }">
+        <DropMenu
+            v-for="item of $store.state.dropMenuItems"
+            :key="item.title"
+            :item="item"
+        />
+      </ul>
     </nav>
   </header>
 
@@ -137,10 +145,7 @@ export default {
     return {
       catalogShown: false,
       dropMenu: false,
-      // items: [
-      //   {message: 'Foo'},
-      //   {message: 'Bar'}
-      // ]
+      isActive: false
     }
   }
 }
@@ -150,6 +155,8 @@ export default {
 $varColorBlack: #000000;
 
 .b-header {
+  box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.16);
+
 }
 
 .b-contactsSlider {
@@ -159,15 +166,31 @@ $varColorBlack: #000000;
   background-color: #FED600;
   padding: 9px 120px;
 
-  @media (max-width: 1269.98px) {
+  @media (max-width: 1500.98px) {
     justify-content: center;
+    padding: 16px 100px;
+  }
+
+  @media (max-width: 1060.98px) {
+    padding: 16px 50px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 750.98px) {
+    padding: 16px 10px;
+    flex-direction: column;
   }
 
   .b-contactsSlider__connections {
     display: flex;
 
     @media (max-width: 1269.98px) {
+      justify-content: center;
       margin-bottom: 10px;
+    }
+
+    @media (max-width: 750.98px) {
+      flex-direction: column;
     }
 
     .b-contactsSlider__cities {
@@ -178,6 +201,10 @@ $varColorBlack: #000000;
       line-height: 18px;
       color: $varColorBlack;
       margin-right: 20px;
+
+      @media (max-width: 750.98px) {
+        margin-right: 0;
+      }
 
       select {
         @extend .b-contactsSlider__cities;
@@ -203,6 +230,7 @@ $varColorBlack: #000000;
     }
 
     .b-contactsSlider__workTime {
+      align-self: center;
 
       p {
         @extend .b-contactsSlider__cities;
@@ -240,6 +268,10 @@ $varColorBlack: #000000;
           text-decoration: none;
         }
       }
+
+      @media (max-width: 1060.98px) {
+        margin-left: 0;
+      }
     }
 
     .b-contactsSlider__socials {
@@ -261,8 +293,20 @@ $varColorBlack: #000000;
           .b-contactsSlider__socialsLinks {
             color: $varColorBlack;
           }
+
         }
       }
+
+      @media (max-width: 1060.98px) {
+        margin-left: 0;
+        align-self: center;
+      }
+    }
+
+    @media (max-width: 1060.98px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
   }
@@ -270,13 +314,21 @@ $varColorBlack: #000000;
 
 .b-userSlider {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 16px 120px;
 
-  @media (max-width: 1269.98px) {
+  @media (max-width: 1500.98px) {
     padding: 16px 100px;
+  }
 
+  @media (max-width: 1060.98px) {
+    padding: 16px 50px;
+  }
+
+  @media (max-width: 550.98px) {
+    justify-content: space-evenly;
   }
 
 }
@@ -297,6 +349,10 @@ $varColorBlack: #000000;
     align-self: center;
     margin-left: 16px;
   }
+
+  @media (max-width: 1050.98px) {
+    margin-bottom: 10px;
+  }
 }
 
 .b-yandexMarket {
@@ -305,9 +361,16 @@ $varColorBlack: #000000;
   border-radius: 8px;
   padding: 5px 12px;
 
+  @media (max-width: 1050.98px) {
+    margin-bottom: 10px;
+  }
 }
 
 .b-search {
+  @media (max-width: 900.98px) {
+    width: 100%;
+  }
+
   form {
     position: relative;
 
@@ -318,7 +381,21 @@ $varColorBlack: #000000;
       border-radius: 4px;
       padding-left: 10px;
 
+      //&::placeholder {
+      //  color: rebeccapurple;
+      //}
+
+      @media (max-width: 900.98px) {
+        width: 100%;
+      }
+
+      @media (max-width: 700.98px) {
+        &::placeholder {
+          color: transparent;
+        }
+      }
     }
+
 
     .btn-search {
       position: absolute;
@@ -337,6 +414,10 @@ $varColorBlack: #000000;
       font-weight: 600;
       line-height: 18px;
     }
+  }
+
+  @media (max-width: 1050.98px) {
+    margin-bottom: 10px;
   }
 }
 
@@ -362,7 +443,9 @@ $varColorBlack: #000000;
     }
   }
 
-
+  @media (max-width: 1050.98px) {
+    margin-bottom: 10px;
+  }
 }
 
 .b-cart {
@@ -396,6 +479,10 @@ $varColorBlack: #000000;
     height: 300px;
     overflow-y: scroll;
   }
+
+  @media (max-width: 1050.98px) {
+    margin-bottom: 10px;
+  }
 }
 
 .b-mainNav {
@@ -405,6 +492,17 @@ $varColorBlack: #000000;
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 990.98px) {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 1500.98px) {
+    padding: 16px 100px;
+  }
+
+  @media (max-width: 1060.98px) {
+    padding: 16px 50px;
   }
 }
 
@@ -416,11 +514,88 @@ $varColorBlack: #000000;
     display: flex;
     justify-content: space-between;
 
-
     .b-servicesNav__hoverNav {
       position: absolute;
       display: none;
     }
+
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  .fa-bars {
+    cursor: pointer;
+    display: none;
+
+    @media (max-width: 990px) {
+      display: block;
+    }
+  }
+
+  .hoverMediaMenu {
+    flex-direction: column;
+    position: absolute;
+    left: -200px;
+    display: none;
+
+    .b-servicesNav__link {
+      i {
+        transform: rotate(-90deg);
+      }
+    }
+
+    .b-servicesNav__list {
+      margin-bottom: 5px;
+
+      .b-servicesNav__link {
+        i {
+          transform: rotate(-90deg);
+        }
+      }
+
+      .hover {
+        padding-top: 0;
+        padding-left: 115px;
+      }
+    }
+
+    @media (max-width: 990px) {
+      display: flex;
+    }
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(196%);
+    transform: translateX(196%);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(196%);
+    transform: translateX(196%);
   }
 }
 

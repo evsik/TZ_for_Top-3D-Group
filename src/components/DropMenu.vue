@@ -51,6 +51,10 @@ $varColorBlack: #000000;
     color: $varColorBlack;
     cursor: pointer;
 
+    @media (max-width: 1269.98px) {
+      font-size: 11px;
+    }
+
     //&:hover + .hover {
     //  display: block;
     //}

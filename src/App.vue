@@ -2,7 +2,6 @@
   <div id="app">
 <!--    <div id="nav">-->
 <!--      <router-link to="/">Home</router-link> |-->
-<!--      <router-link to="/about">About</router-link>-->
 <!--    </div>-->
 <!--    <router-view/>-->
     <Header>
@@ -24,7 +23,6 @@ export default {
 
 <style lang="scss">
 #app {
-  max-width: 1440px;
   padding: 10px 50px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
