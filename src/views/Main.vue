@@ -54,6 +54,31 @@
         </p>
       </div>
     </section>
+    <article class="b-linksAboutUs">
+      <h2 class="b-linksAboutUs__head">
+        Лучше один раз увидеть:
+      </h2>
+      <ul>
+        <li class="b-linksAboutUs__list">
+          <a href="#" class="b-linksAboutUs__links b-linksAboutUs__links_active">
+            Как устроена наша компания изнутри
+          </a>
+          <i class="fas fa-chevron-right fa-chevron-right_active"></i>
+        </li>
+        <li class="b-linksAboutUs__list">
+          <a href="#" class="b-linksAboutUs__links">
+            Как создавалась компания - необычная история
+          </a>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+        <li class="b-linksAboutUs__list">
+          <a href="#" class="b-linksAboutUs__links">
+            Читай о нас на 3D Today
+          </a>
+          <i class="fas fa-chevron-right"></i>
+        </li>
+      </ul>
+    </article>
   </main>
 </template>
 
@@ -201,8 +226,79 @@ main {
     }
   }
 
+}
+
+.b-linksAboutUs {
 
 
+  .b-linksAboutUs__head {
+    margin-bottom: 50px;
+    font-family: $varFontFamilySF;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.7px;
+    color: #222222;
+    text-align: left;
+
+    @media (max-width: 870px) {
+      margin-bottom: 25px;
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+
+    @media(max-width: 870px) {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .b-linksAboutUs__list {
+      list-style-type: none;
+
+      @media(max-width: 870px) {
+        margin-bottom: 10px;
+      }
+
+      .b-linksAboutUs__links {
+        font-family: $varFontFamilySF;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        /* text-decoration-line: underline; */
+        color: #4D4D4D;
+        text-decoration: none;
+        border-bottom: 1px solid #4D4D4D;
+
+        @media (max-width: 500px) {
+          font-size: 12px;
+        }
+      }
+
+      .b-linksAboutUs__links_active {
+        color: #D2001C;
+        border-bottom: 1px solid #D2001C;
+      }
+
+      i {
+        margin-left: 15px;
+        vertical-align: middle;
+
+        @media (max-width: 500px) {
+          font-size: 12px;
+          margin-left: 5px;
+        }
+      }
+
+      .fa-chevron-right_active {
+        color: #D2001C;
+      }
+    }
+  }
 }
 
 </style>
