@@ -83,8 +83,8 @@
       <div class="b-userCabinet">
         <a href="#">
           <i class="fas fa-sign-in-alt">
-            <p>Войти</p>
           </i>
+          <p>Войти</p>
         </a>
       </div>
       <div class="b-cart">
@@ -163,7 +163,7 @@ $varColorBlack: #000000;
   display: flex;
   justify-content: space-between;
   background-color: #FED600;
-  padding: 9px 120px;
+  padding: 16px 120px;
 
   @media (max-width: 1500.98px) {
     //justify-content: center;
@@ -416,6 +416,13 @@ $varColorBlack: #000000;
       font-size: 13px;
       font-weight: 600;
       line-height: 18px;
+      transition: 0.5s;
+
+      &:hover {
+        color: white;
+        background-color: #D2001C;
+        border: 2px solid transparent;
+      }
     }
   }
 
@@ -430,19 +437,21 @@ $varColorBlack: #000000;
   a {
     color: #D2001C;
     text-decoration: none;
+    display: flex;
 
     i {
-      display: flex;
       font-size: 22px;
+    }
 
-      p {
-        margin-left: 10px;
-        font-family: Open Sans, serif;
-        font-weight: 600;
-        font-size: 13px;
-        color: #222222;
-        align-self: center;
-      }
+    p {
+      font-family: Open Sans;
+      /* font-style: normal; */
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 18px;
+      margin-left: 10px;
+      color: #222222;
+      align-self: center;
     }
   }
 

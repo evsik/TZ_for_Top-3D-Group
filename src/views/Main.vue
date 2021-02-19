@@ -108,7 +108,7 @@ main {
   padding: 70px 120px;
 
   @media (max-width: 1500.98px) {
-    padding: 16px 100px;
+    padding: 70px 100px;
   }
 
   @media (max-width: 1060.98px) {
@@ -167,6 +167,12 @@ main {
     letter-spacing: -0.7px;
     margin-bottom: 20px;
     cursor: pointer;
+    transition: 1s;
+
+    &:hover {
+      transform: scale(1.1);
+      opacity: 0.5;
+    }
 
     @media(max-width: 700px) {
       width: 180px;
@@ -229,7 +235,7 @@ main {
 }
 
 .b-linksAboutUs {
-
+  padding-bottom: 50px;
 
   .b-linksAboutUs__head {
     margin-bottom: 50px;
@@ -273,6 +279,15 @@ main {
         color: #4D4D4D;
         text-decoration: none;
         border-bottom: 1px solid #4D4D4D;
+
+        &:hover {
+          color: #D2001C;
+          border-bottom: 1px solid #D2001C;
+        }
+
+        &:hover + i {
+          color: #D2001C;
+        }
 
         @media (max-width: 500px) {
           font-size: 12px;
