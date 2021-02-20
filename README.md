@@ -1,4 +1,5 @@
 # TZ_for_Top-3D-Group
+vue/vue-cli/vuex/SCSS/JS/HTML5
 
 ## Project setup
 ```
