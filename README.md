@@ -1,4 +1,4 @@
-# tz
+# TZ_for_Top-3D-Group
 
 ## Project setup
 ```
